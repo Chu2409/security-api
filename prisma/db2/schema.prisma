@@ -1,0 +1,18 @@
+generator client {
+  provider     = "prisma-client"
+  output       = "../../src/core/db2/generated"
+  moduleFormat = "cjs"
+}
+
+datasource db {
+  provider = "sqlserver"
+}
+
+model Producto {
+  id     Int    @id @default(autoincrement())
+  nombre String
+  precio Float
+  stock  Int
+
+  @@map("productos")
+}
